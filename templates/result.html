@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flask App</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		h1 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+		img {
+			margin-top: 20px;
+			max-width: 500px;
+			max-height: 500px;
+		}
+		form {
+			margin-top: 20px;
+		}
+		button {
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: none;
+			background-color: #1c87c9;
+			color: #fff;
+			cursor: pointer;
+			margin-right: 10px;
+			margin-bottom: 20px;
+		}
+		button:hover {
+			background-color: #135b8e;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Predicted Class: {{ predicted_class }}</h1>
+		<img src="{{ url_for('static', filename='uploads/' + image_file.filename) }}">
+		<form action="/" method="get">
+			<button type="submit">Upload another image</button>
+		</form>
+	</div>
+</body>
+</html>
+
+
+
+

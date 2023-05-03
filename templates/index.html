@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cat or Dog Classifier</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      input[type="file"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+      button[type="submit"] {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      h2 {
+        margin-top: 30px;
+      }
+      img {
+        margin-top: 30px;
+        max-width: 500px;
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cat or Dog Classifier</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*">
+      <button type="submit">Submit</button>
+    </form>
+    {% if predicted_class %}
+      <h2>Predicted Class: {{ predicted_class }}</h2>
+      <img src="{{ url_for('static', filename=image_file.filename) }}" alt="Uploaded Image">
+    {% endif %}
+  </body>
+</html>
+
+
+
+
+
+
